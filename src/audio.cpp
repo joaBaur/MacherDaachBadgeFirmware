@@ -13,6 +13,9 @@ void updateAudio()
 
 void playAudio(int note_index, int note_length)
 {
+#ifndef SOUNDBADGE
+    return;
+#endif
     if (note_index == STOP) {
         // stop timer (stop audio completely or play pause)
         // Stop Timer1 clock by clearing CS bits (keeps PWM config)

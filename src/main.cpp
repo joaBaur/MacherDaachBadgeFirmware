@@ -129,6 +129,7 @@ void setup()
     TCNT2 = 0;
     OCR2A = 249;
 
+#ifdef SOUNDBADGE
     // initialize timer1 for audio output with fast PWM on pin 9 (OC1A)
     pinMode(audio_out_pin, OUTPUT);
 
@@ -136,6 +137,7 @@ void setup()
     // WGM13:10 = 1110 (Fast PWM, TOP = ICR1)
     TCCR1A = (1 << COM1A1) | (1 << WGM11);
     TCCR1B = (1 << WGM13) | (1 << WGM12) | (1 << CS10); // No prescaler
+#endif
 
     // call initializer of first mode
     initializer_functions[0]();

@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
 // the text to display in OutputShiftString-Mode:
-#define TEXT "' SoundBadge 2026"
+#define TEXT "' MacherDaach 2026"
 #define UART_SHIFT_SPEED_MS 40
 #define TEXT_SHIFT_SPEED_MS 40
 
@@ -34,7 +34,12 @@ const uint8_t LED_X4 = 5; // PD5    Pin 10
 const uint8_t LED_X5 = 6; // PD6    Pin  6
 const uint8_t LED_X6 = 7; // PD7    Pin 11
 const uint8_t LED_X7 = 8; // PB0    Pin 15
+#ifdef SOUNDBADGE
 const uint8_t LED_X8 = 20; // PB6    Pin 16
+const uint8_t audio_out_pin = 9; // PB1 OC1A von Timer1
+#else
+const uint8_t LED_X8 = 9; // PB1    Pin 16
+#endif
 
 const uint8_t LED_Y8 = 14; // PC0    Pin  9
 const uint8_t LED_Y7 = 15; // PC1    Pin 14
@@ -50,8 +55,6 @@ const uint8_t LED_Y[8] = { LED_Y1, LED_Y2, LED_Y3, LED_Y4, LED_Y5, LED_Y6, LED_Y
 
 const uint8_t button_1_Pin = 10; // PB2        push button SW1
 const uint8_t button_2_Pin = 11; // PB3 (MOSI) push button SW2
-
-const uint8_t audio_out_pin = 9; // PB1 OC1A von Timer1
 
 extern volatile uint16_t countdown;
 extern uint8_t x;
