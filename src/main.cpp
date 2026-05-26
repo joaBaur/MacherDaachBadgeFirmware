@@ -130,8 +130,8 @@ void setup()
     OCR2A = 249;
 
 #ifdef SOUNDBADGE
-    // initialize timer1 for audio output with fast PWM on pin 9 (OC1A)
-    pinMode(audio_out_pin, OUTPUT);
+    // set pin to INPUT_PULLUP to surpress buzzing on matrix update
+    pinMode(audio_out_pin, INPUT_PULLUP);
 
     // Configure timer1 for Fast PWM mode
     // WGM13:10 = 1110 (Fast PWM, TOP = ICR1)
