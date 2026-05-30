@@ -130,7 +130,7 @@ void setup()
     OCR2A = 249;
 
 #ifdef SOUNDBADGE
-    // set pin to INPUT_PULLUP to surpress buzzing on matrix update
+    // set pin to INPUT_PULLUP to supress buzzing on matrix update
     pinMode(audio_out_pin, INPUT_PULLUP);
 
     // Configure timer1 for Fast PWM mode

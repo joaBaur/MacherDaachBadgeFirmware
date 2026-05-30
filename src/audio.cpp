@@ -21,7 +21,7 @@ void playAudio(int note_index, int note_length)
         // stop timer (stop audio completely or play pause)
         // Stop Timer1 clock by clearing CS bits (keeps PWM config)
         TCCR1B &= ~((1 << CS12) | (1 << CS11) | (1 << CS10));
-        // set pin to INPUT_PULLUP to surpress buzzing on matrix update
+        // set pin to INPUT_PULLUP to supress buzzing on matrix update
         pinMode(audio_out_pin, INPUT_PULLUP);
     } else {
         // initialize timer1 for audio output with fast PWM on pin 9 (OC1A)
